@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="banner">
+    <img src="{{ url_for('static', filename='imagens/banner.webp') }}" alt="Climatização e Refrigeração">
+    <div class="banner-text">
+        <h1>Climatização e Refrigeração Profissional</h1>
+        <p>Instalação, manutenção e reparo com qualidade e confiança</p>
+        <a href="{{ url_for('contato') }}" class="btn">Solicitar Orçamento</a>
+    </div>
+</section>
+{% endblock %}

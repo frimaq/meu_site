@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="banner">
+    <img src="{{ url_for('static', filename='imagens/banner.jpg') }}" alt="Climatização e Refrigeração">
+    <div class="banner-text">
+        <h1>Climatização e Refrigeração Profissional</h1>
+        <p>Instalação, manutenção e reparo com qualidade e confiança</p>
+        <a href="{{ url_for('contato') }}" class="btn">Solicitar Orçamento</a>
+    </div>
+</section>
+
+<section class="servicos-home">
+    <h2>Nossos Serviços</h2>
+    <div class="grid-servicos">
+        <div class="card">
+            <h3>Instalação</h3>
+            <p>Instalação de ar-condicionado e sistemas de climatização.</p>
+        </div>
+        <div class="card">
+            <h3>Manutenção</h3>
+            <p>Preventiva e corretiva para manter seu equipamento em perfeito estado.</p>
+        </div>
+        <div class="card">
+            <h3>Refrigeração</h3>
+            <p>Soluções para refrigeração comercial e industrial.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
