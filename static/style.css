@@ -6,6 +6,23 @@
     box-sizing: border-box;
 }
 
+/* Força altura mínima de tela em todas as páginas */
+html, body {
+    height: 100%;
+}
+
+/* Garante layout em colunas (header + conteúdo + footer) */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Faz o conteúdo ocupar o espaço "elástico" */
+main {
+    flex: 1;
+}
+
 body {
     font-family: "Arial", sans-serif;
     background: #f4f6f9;
