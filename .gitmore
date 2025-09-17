@@ -1,0 +1,29 @@
+# Ignorar arquivos Python compilados e caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignorar ambientes virtuais
+env/
+venv/
+
+# Arquivos temporários ou de backup
+*.zip
+*.tar.gz
+*.bak
+*.tmp
+*.log
+*.swp
+
+# Arquivos específicos do projeto
+*.odg
+*.xcf
+*.bmp
+*.pbm
+*.svg
+*.HTML
+.DS_Store
+
+# Arquivos de configuração sensíveis
+*.env
