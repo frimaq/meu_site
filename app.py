@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect
+import urllib.parse
 
 app = Flask(__name__)
 
@@ -21,9 +22,26 @@ def contato():
         email = request.form["email"]
         telefone = request.form["telefone"]
         mensagem = request.form["mensagem"]
-        # Aqui você pode salvar em banco de dados ou enviar e-mail
-        print(f"Mensagem recebida de {nome} ({telefone}) - {email}: {mensagem}")
-        return redirect(url_for("home"))
+
+        # Monta o texto que será enviado
+        texto = (
+            f"📩 Nova mensagem de contato!\n\n"
+            f"👤 Nome: {nome}\n"
+            f"📧 Email: {email}\n"
+            f"📱 Telefone informado: {telefone}\n\n"
+            f"💬 Mensagem:\n{mensagem}"
+        )
+
+        # Codifica o texto para URL
+        texto_encoded = urllib.parse.quote(texto)
+
+        # Seu número do WhatsApp (formato internacional)
+        numero_whats = "5554991853581"
+
+        # Monta a URL do WhatsApp
+        url = f"https://wa.me/{numero_whats}?text={texto_encoded}"
+        return redirect(url)
+
     return render_template("contato.html")
 
 if __name__ == "__main__":
